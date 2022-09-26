@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang=“en”>
+<head>
+    <meta charset=“UTF-8">
+    <meta http-equiv=“X-UA-Compatible” content=“IE=edge”>
+    <meta name=“viewport” content=“width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="kaynakSayilar"></div>
+    <input type="button" value="Hesapla" onclick="hesapla()">
+    <h2>Elde edilen sonuçlar</h2>
+
+    <div id="sonuc1"></div>
+    <div id="sonuc2"></div>
+    <div id="sonuc3"></div>
+    <script>
+        let sayi = [12, 56, 14, 67, 89, 33, 22];
+        let toplam =0;
+        document.querySelector("#kaynakSayilar").innerHTML=`İşlem yapılacak sayılar : ${sayi}`;
+
+       function hesapla(){
+        //sayıların toplamını bu for döngüsünde bulduk
+        for(let i=0; i<sayi.length; i++){
+            toplam += sayi[i];
+           
+        }
+        
+        let ort = toplam/sayi.length;//sayıların ortalamasını aldık
+        ort=ort.toFixed(2);//ortalamada virgülden sonra 2 basamak kalsın
+
+        let counter=0; //kaç sayının ortalamadan küçük olduğunu bulmak için bir counter
+        let min = [];  // ortalamadan küçük sayıları yazdırmak için ayrı bir array
+        for(let i=0; i<sayi.length; i++){
+            if(sayi[i]<ort){
+                counter = counter +1; //ortalamadan küçükse counter'ı artır
+                min.push(sayi[i]);    //ortalamadan küçük sayıları bu arraya kaydet
+            }
+           
+        }
+        //console.log(counter);
+        document.querySelector("#sonuc1").innerHTML=`ortalama : ${ort}`;
+        document.querySelector("#sonuc2").innerHTML=`ortalamadan küçük rakam sayısı : ${counter}`;
+        alert("ortalamadan küçük rakam sayısı : "+counter);
+        document.querySelector("#sonuc3").innerHTML=`ortalamadan küçük rakamlar : ${min}`;
+
+       }
+
+       
+
+
+    </script>
+</body>
+</html>

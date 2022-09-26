@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 2em; /* parenttır normalde yazı tipi 1 emdir */
+        }
+        .kutu1{
+            font-size: 2em; /* buna 2 yazınca parentininkinin iki katına çıktı */
+        }
+        .kutu2{
+            font-size: 2em; /* buan da 2 em yazınca 8 katına çıktı */
+        }
+        html{
+            font-size: 2rem; /*en parent htmldir hepsini etkiler*/
+        }
+        .kutu3{
+            font-size: 2rem;
+
+        }
+        .kutu4{
+            font-size: 2 rem;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="kutu1"> 1merhaba
+        <div class="kutu2">2dunya</div>
+    </div>
+    <div class="kutu3"> 1merhaba
+        <div class="kutu4">2dunya</div>
+    </div>
+    Btest
+</body>
+</html>

@@ -1,0 +1,14 @@
+table {
+    border-collapse: collapse;
+  }
+.active{
+    background-color: black;
+}
+th{
+    color: white;
+    
+}
+td{
+    background-color: lightgray;
+    text-align: center;
+}

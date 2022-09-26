@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <input type="number" name="" id="nbrVize" placeholder="Vize">
+        <input type="number" name="" id="nbrFinal" placeholder="Final">
+        <input type="button" value="Hesapla" onclick="hesapla()">
+    </form>
+    <div id="sonuc"></div>
+
+
+ <script>
+    function hesapla(){
+    const vize =document.querySelector("#nbrVize").value;
+    const final =document.querySelector("#nbrFinal").value;
+
+    if(!vize || isNaN(vize) || vize<0 || vize>100){
+        alert("Geçerli bir vize notu giriniz");
+        return;
+    }
+    if(!final || isNaN(final) || final<0 || final>100){
+        alert("Geçerli bir final notu giriniz");
+        return;
+    }
+
+    let ortalama = vize*.3 +final*.7;
+
+    const notlar ={
+        vize:vize,
+        final:final,
+        ort:ortalama
+    };
+    console.log(notlar);
+    document.querySelector("#sonuc").innerHTML=notlar.ort.toFixed(3);
+
+
+
+    }
+    
+
+
+ </script>   
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="menu">
+      <ul>
+        <li class ="kutu" id="kutu1">Anasayfa</li><!-- ID unique olmalı -->
+        <li class ="kutu">Hakkimizda</li>
+        <li class ="kutu">Iletisim</li>
+      </ul>
+    </nav>
+
+    <script>
+        let menu1 = document.querySelector(".menu");//class ismi menu olan elementi sectik
+        console.log(menu1);
+        let sec = document.querySelector("#kutu1");//id'si kutu1 olan li'yi seçtik
+        console.log(sec.innerText);//Anasayfa secilir
+
+        //sectiğimiz li'nin icerigini degistirelim
+        sec.innerText = "Merhaba Dunya";// Anasayfa'yi merhaba dünya ile değiştirdim
+
+        sec.innerText ="<b> Merhaba Dunya </b>"//çalışmaz innertext html taglarını algılamaz.
+        sec.innerHTML = "<b> Merhaba Dunya </b>"//innerhtml tagları algıladı
+
+        let hepsi = document.querySelectorAll(".kutu"); // kutu clası olan hepsini seçer
+        console.log(hepsi);
+
+
+
+
+    </script>
+  </body>
+</html>

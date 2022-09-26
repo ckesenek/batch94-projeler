@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Hesap Makinesi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input[type=button] {
+            background-color:aqua;
+            width: 40px;
+        }
+        #Ekran {
+            text-align: right;
+            border:2px solid deeppink;
+            background-color: black;
+            color: white;
+            font-size:15px;
+        }
+
+        .TusBuyuk {
+            width: 100px !important;
+            background-color: chocolate !important;
+            border:1px solid gold !important;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        table {
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+
+    <table border="0">
+        <tr>
+            <td colspan="4">
+        <input type="text" value="0" id="Ekran" />
+    </td>
+</tr>
+<tr>
+    <td><input type="button" value="1" id="Tus1" onclick="Yazici(1)" /></td>
+<td><input type="button" value="2" id="Tus2" onclick="Yazici(2)" /></td>
+<td><input type="button" value="3" id="Tus3" onclick="Yazici(3)" /></td>
+<td><input type="button" value="+" id="TusArti" onclick="Islem('+')" /></td>
+</tr>
+<tr>
+    <td><input type="button" value="4" id="Tus4" onclick="Yazici(4)" /></td>
+<td><input type="button" value="5" id="Tus5" onclick="Yazici(5)" /></td>
+<td><input type="button" value="6" id="Tus6" onclick="Yazici(6)" /></td>
+<td><input type="button" value="-" id="TusEksi" onclick="Islem('-')" /></td>
+</tr>
+<tr>
+    <td><input type="button" value="7" id="Tus7" onclick="Yazici(7)" /></td>
+<td><input type="button" value="8" id="Tus8" onclick="Yazici(8)" /></td>
+<td><input type="button" value="9" id="Tus9" onclick="Yazici(9)" /></td>
+<td><input type="button" value="x" id="TusCarpi" onclick="Islem('*')" /></td>
+</tr>
+<tr>
+    <td colspan="2"><input type="button" value="C" id="TusSil" class="TusBuyuk" onclick="Islem('C')" /></td>
+<td colspan="2"><input type="button" value="=" id="TusEsittir"  class="TusBuyuk" onclick="Islem('=')"  /></td>
+</tr>
+</table>
+
+<script>
+    var Sayi1, Sayi2, MatIslem;
+    var EkranDegeri = document.getElementById("Ekran");
+
+    function Yazici(GelenDeger) { //alert(GelenDeger);
+        if (EkranDegeri.value == 0) {
+            EkranDegeri.value = "";
+        }
+        EkranDegeri.value += GelenDeger;
+        //document.getElementById("Ekran").value += GelenDeger;
+    }
+
+    function Islem(GelenDeger) {
+        if (GelenDeger == 'C') {
+            EkranDegeri.value = 0;
+        }
+        if (GelenDeger == '+') {
+            Sayi1 = EkranDegeri.value; //simdiye kadar yazılanları Sayi1 e at
+            EkranDegeri.value += '+'; //islemi yaz
+            MatIslem = '+';
+            //Islem('C'); //Ekranı sil
+        }
+        if (GelenDeger == '-') {
+            Sayi1 = EkranDegeri.value; //simdiye kadar yazılanları Sayi1 e at
+            EkranDegeri.value += '-'; //islemi yaz
+            MatIslem = '-';
+            //Islem('C'); //Ekranı sil
+        }
+        if (GelenDeger == '*') {
+            Sayi1 = EkranDegeri.value; //simdiye kadar yazılanları Sayi1 e at
+            EkranDegeri.value += '*'; //islemi yaz
+            MatIslem = '*';
+            //Islem('C'); //Ekranı sil
+        }
+        if (GelenDeger == '=') {
+            Sayi2 = EkranDegeri.value.split(MatIslem)[1]; //simdiye kadar yazılanları Sayi1 e at
+            switch (MatIslem) {
+                case '+' :
+                    EkranDegeri.value = parseInt(Sayi1) + parseInt(Sayi2);
+                    break;
+                case '-' :
+                    EkranDegeri.value = parseInt(Sayi1) - parseInt(Sayi2);
+                    break;
+                case '*' :
+                    EkranDegeri.value = parseInt(Sayi1) * parseInt(Sayi2);
+                    break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

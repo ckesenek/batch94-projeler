@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function yasHesapla1(){
+            console.log(`Benim yasim ${2022-1990}`);
+        }
+        yasHesapla1();
+        yasHesapla1();
+        function yasHesapla2(dogumTarihi){
+            console.log(`Benim yasim ${2022 - dogumTarihi}`);
+        }
+        yasHesapla2(1980);
+        yasHesapla2(2001);
+        function yasHesapla3(dogumTarihi){
+
+            let yas =2022-dogumTarihi;
+            return yas;
+            }
+
+        let yas = yasHesapla3(2005);
+        console.log(yas);
+
+        function yasHesapla4(dogumTarihi){
+        let tarih = new Date();// tarih object'ini aldik
+        let year = tarih.getFullYear();//sadece yil kismini aldik
+        let yas2 = year- dogumTarihi;
+        return yas2;
+        }
+        let yas2 = yasHesapla4(1980);// yas2 fuction icinde kullanildiğindan 
+        alert("Yas: "+ yas2)
+
+    </script>
+</body>
+</html>

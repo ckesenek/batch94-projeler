@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <script>
+        var x =5;
+        var x =6;
+        console.log(x);
+
+        var x =4;
+        x=8;
+        console.log(x);
+//let'te tekrar durumunda hata verir ama var'da hata vermiyor. let kullanımı apex gibi
+        let y=5;
+        y=7;
+        console.log(y);
+
+
+        var x=5;
+        var k; //ilk değer atamadan da kullanılabilir.
+        const d=2; //ilk değer verilmezse hata verir.
+        console.log(x, k, d); // aralarına virgül koyarak yazdırabiliriz.
+
+        let enBuyukTamSayi = Number.MAX_SAFE_INTEGER;
+        console.log(enBuyukTamSayi);
+        console.log(enBuyukTamSayi+5==enBuyukTamSayi+6)
+
+        var testTamsayi = 12616361656562965656565656265968565n;
+        console.log(testTamsayi+5n==testTamsayi+6n)
+
+        let s=12;
+        console.log(s);
+        console.log(typeof(s));// typeoff data tipini verir.
+
+    </script>
+</body>
+</html>

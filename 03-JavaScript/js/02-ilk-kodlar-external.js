@@ -1,0 +1,1 @@
+console.log("Harici dosyadan geldi");

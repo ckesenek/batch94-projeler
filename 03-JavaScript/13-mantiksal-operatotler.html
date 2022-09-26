@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        let s2="kus";
+        let s3="kedi";
+        console.log(s2||s3);// ilkine bakar kus verir
+        console.log(s2&&s3);//falsei aradı bulamayınca sonuncuyu alır
+        console.log(""||0|| "asd" ||undefined);// 1'i arar asd verir
+        console.log(12 && 0 && "bc" && undefined);// 0'ı bulunca diğerlerine bakmaz
+        //&& Ve'nin işlem önceliği vardır
+
+        let x =22;
+        let y =5
+        x +=4;
+        x /=2;
+        x %=y;
+        y=x;
+        x *=y;
+        y **=2;
+        console.log(x-y);
+        
+
+    </script>
+</body>
+</html>

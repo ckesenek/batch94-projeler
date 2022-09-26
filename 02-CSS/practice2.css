@@ -1,0 +1,20 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+nav.menu{
+    text-align:center;
+    background-color: rgb(199, 190, 190);
+/*class ismi menu olan navlar*/
+}
+.active{
+    background-color: black;
+}
+
+a.link{
+    color:white
+   
+}
+
+a{
+    text-decoration:none;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Hesap Makinası</h1>
+<input type="text" name="" id="Ekran" value="0" style="text-align:right"> <br>
+<input type="button" value="1" onclick="yazdir(1)" style="width:1.5cm">
+<input type="button" value="2" onclick="yazdir(2)" style="width:1.5cm">
+<input type="button" value="3" onclick="yazdir(3)" style="width:1.5cm"><br>
+<input type="button" value="4" onclick="yazdir(4)" style="width:1.5cm">
+<input type="button" value="5" onclick="yazdir(5)" style="width:1.5cm">
+<input type="button" value="6" onclick="yazdir(6)" style="width:1.5cm"><br>
+<input type="button" value="7" onclick="yazdir(7)" style="width:1.5cm">
+<input type="button" value="8" onclick="yazdir(8)" style="width:1.5cm">
+<input type="button" value="9" onclick="yazdir(9)" style="width:1.5cm"><br>
+<input type="button" value="0" onclick="yazdir(0)" style="width:1.5cm">
+<input type="button" value="Temizle" onclick="islem('c')"><br><br>
+
+<div>işlemler:</div><br>
+<input type="button" value="+" onclick="islem('+')" style="width:1.5cm">
+<input type="button" value="-" onclick="islem('-')" style="width:1.5cm"><br>
+<input type="button" value="*" onclick="islem('*')" style="width:1.5cm">
+<input type="button" value="/" onclick="islem('/')" style="width:1.5cm"><br>
+<input type="button" value="=" onclick="islem('=')" style="width:3cm"><br>
+
+
+
+
+<script>
+    var sayi1, sayi2, matIslem;
+    var ekranDegeri = document.querySelector("#Ekran");
+
+   function yazdir(gelenSayi){// tuşa tıkladığında ekrana sayıyı yazdır
+    if (ekranDegeri.value == 0) {// ekranda 0 varsa ve yeni rakam girildiğinde soldaki sıfırı sil
+        ekranDegeri.value = "";
+    }
+    ekranDegeri.value = ekranDegeri.value + gelenSayi;
+   }
+
+   function islem(operator){
+    if(operator=='c'){// ekranı temizle
+        ekranDegeri.value="0";
+    }
+    if(operator=='+'){
+        sayi1 = ekranDegeri.value;
+        ekranDegeri.value += '+';// toplama işlemini ekrana yaz
+        matIslem = '+';// ikinci rakamı almadan önce işlemi bir variable'a aktar
+        
+    }
+    if(operator=='-'){
+        sayi1 = ekranDegeri.value;
+        ekranDegeri.value += '-'; // çıkarma işlemini ekrana yaz
+        matIslem = '-';// ikinci rakamı almadan önce işlemi bir variable 'a aktar
+        
+    }
+    if(operator=='*'){
+        sayi1 = ekranDegeri.value;
+        ekranDegeri.value += '*';// çarpma işlemini ekrana yaz
+        matIslem = '*';//ikinci rakamı almadan önce işlemi bir variable 'a aktar
+        
+    }
+    if(operator=='/'){
+        sayi1 = ekranDegeri.value;
+        ekranDegeri.value += '/';// bölme işlemini ekrana yaz
+        matIslem = '/';//ikinci rakamı almadan önce işlemi bir variable 'a aktar
+        
+    }
+    if(operator=='='){
+        sayi2 = ekranDegeri.value.split(matIslem)[1]; //ekrandaki değeri sayı 2ye aktar
+        switch (matIslem) {
+            case '+' :
+            ekranDegeri.value = parseInt(sayi1) + parseInt(sayi2);// number ile anyı işlemi yapıyor number burada çalışmadı
+                break;
+            case '-' :
+            ekranDegeri.value =  parseInt(sayi1) - parseInt(sayi2);
+                break;
+            case '*' :
+            ekranDegeri.value =  parseInt(sayi1) * parseInt(sayi2);
+                break;
+            case '/' :
+            ekranDegeri.value =  parseInt(sayi1) / parseInt(sayi2);
+                break;
+        }
+
+
+    }
+
+ 
+
+    }
+        
+
+   
+</script>
+</body>
+</html>

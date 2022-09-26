@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" name="sayı1" id="sayi1" placeholder="Sayı 1">
+        <input type="number" name="sayi2" id="sayi2" placeholder ="Sayı 2">
+        <input type="button" value="Topla" onclick="topla()"><!-- butona tıklayınca topla fonksiyonu calisir -->
+
+    </form>
+    <div id="sonuc"> </div>
+
+    <script>
+        function topla(){
+          let sayi1 = document.querySelector("#sayi1").value;// ilk inputun valuesunu aldık
+          let sayi2 = document.querySelector("#sayi2").value;
+
+          let toplam = Number(sayi1) + Number(sayi2);//string geldiği icin number a çevirdik
+
+          document.querySelector("#sonuc").innerHTML = `sonuc = ${toplam}`;
+
+        }
+    
+    </script>
+</body>
+</html>

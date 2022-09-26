@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" name="" id="txtGiris">
+        <input type="button" value="Ekle" onclick="ekle()">
+    </div>
+    <div>
+        <select name="" id="liste" size="10" style="width: 225px; margin:0.1rem ;">
+
+        </select>
+    </div>
+    <div>
+        <input type="button" value="Sil" onclick="sil()">
+        <input type="button" value="A'dan Z'ye sırala" onclick="sirala1()" >
+        <input type="button" value="Z'den A'ya sırala" onclick="sirala2()">
+    </div>
+
+    <script>
+        let arrNames = ["Ali", "Veli", "Can"];
+
+        function guncelle(){
+            let strOption ="";
+            for(let i=0;i<arrNames.length;i++){
+                strOption += `<option>${arrNames[i]}</option>`;
+            
+            }
+            document.querySelector("#liste").innerHTML=strOption;
+
+        }
+        guncelle();
+
+        function ekle(){
+            const yeniAd =document.querySelector("#txtGiris").value;//textboxtaki değeri al
+            arrNames.push(yeniAd);//arraya ekle
+            guncelle();
+        }
+
+        function sil(){
+            let index =document.querySelector("#liste").selectedIndex;//seçili değerin indexini al
+            arrNames.splice(index,1);// ilgili indextekini sil
+            guncelle();
+        }
+
+        function sirala1(){// A'dan Z'ye sıralar
+            arrNames.sort();
+            guncelle();
+        }
+
+        function sirala2(){//Z'den A'ya sıralar.
+            arrNames.sort();
+            arrNames.reverse();
+            guncelle();
+        }
+
+
+
+
+    </script>
+</body>
+</html>

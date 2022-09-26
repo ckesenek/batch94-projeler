@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form name="sayibul">
+    Sayi 1: <input type="text" name="sayi1"><br />
+    Sayi 2:<input type="text" name="sayi2"><br />
+    Arasındaki sayılar..:<br />
+    <textarea cols="60" rows="5" name="sayilar"></textarea><br />
+    <input type="button" Value="Sayıları Bul" onClick="Bul()">
+    <input type="reset" value="Temizle" />
+    </form>
+    </body>
+
+<script>
+    function Bul()
+    {
+    var a=parseInt(document.sayibul.sayi1.value);
+    var b=parseInt(document.sayibul.sayi2.value);
+    var i=0;
+    if(a>b)
+    {
+    alert("Birinci Sayı İkinci Sayıdan Küçük Olmalı");
+    document.sayibul.sayi1.value="";
+    document.sayibul.sayi2.value="";
+    document.sayibul.sayi1.focus();
+    }
+    else
+    {
+    for(i=a;i<b;i++)
+    {
+    if(i%7==0)
+    {
+    document.sayibul.sayilar.value+=i+" ";
+    }
+    }
+    }
+     
+    }
+</script>
+    </body>
+</html>

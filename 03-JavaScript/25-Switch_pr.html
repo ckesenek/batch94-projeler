@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" name="" id="txtGun" min="1" max="7">
+    <input type="button" value="Hesapla" onclick="hesapla()" id="btnhesapla">
+    <div id="lblSonuc"></div>
+    <script>
+        function hesapla(){
+         let gunNum = document.querySelector("#txtGun").value;
+         let gun;
+         switch(true){
+            case (gunNum==1):
+            gun = "Pazar";
+            break;
+
+            case (gunNum==2):
+            gun = "Pazartesi";
+            break;
+
+            case (gunNum==3):
+            gun = "Salı";
+            break;
+
+            case (gunNum==4):
+            gun = "Çarşamba";
+            break;
+
+            case (gunNum==5):
+            gun = "Perşembe";
+            break;
+
+            case (gunNum==6):
+            gun = "Cuma";
+            break;
+
+            case (gunNum==7):
+            gun = "Cumartesi";
+            break;
+
+            default:
+            gun ="Girilen rakam yanlış"
+            
+    
+            
+            
+         }
+         document.querySelector("#lblSonuc").innerHTML = gun;
+        }
+    </script>
+</body>
+</html>

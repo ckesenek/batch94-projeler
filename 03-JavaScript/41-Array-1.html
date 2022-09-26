@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let kurslar =["JavaScript", "Salesforce", "Data Science", "Python"]
+        console.log(kurslar);// 4 elemanlı bir array olarak gösterir.
+        console.log(kurslar[1]);//Salesforce'u verir.
+        console.log(kurslar[kurslar.length-1]);//son elemanı verir.
+        console.log(kurslar.length);//4
+
+        const kurslar2 =["JavaScript", "Salesforce", "Data Science", "Python"];
+        kurslar2[0]="React";
+        kurslar2[1] ="Java";
+        console.log(kurslar2);//const ile tanımlanmasınıa rağmen değiştirebildik.constun değiştirmeme işlevi primitive datalarda geçerlidir. array primitive data değildir.
+
+        kurslar2 = ["Ali", "Veli"];
+        console.log(kurslar2);//const'la tanıimlanmisaa array'i komple değiştiremezsiniz.
+        //Ama let'e çevirirsek değiştirebilirsiniz.
+
+        
+
+    </script>
+</body>
+</html>

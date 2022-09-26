@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        let x = 50;
+        let y = 40;
+        let z = 10;
+
+        console.log(x ==50);//true
+        console.log(x==45);//false
+        console.log(x===50);//true hem veriye hem veri tipine bakar
+        console.log(x=="50");//true sadece veriye bakar 
+        console.log(x==="50");//false hem veriye hem veri tipine bakar
+        
+        console.log(x ===50n);
+        console.log(x>y);//true
+        console.log(x>"30");// büyük küçük data tipine bakmaz. 
+        console.log(x>"130");// false
+        console.log(x>"asd")// karşılaştıramadıgı için false verir.
+
+        s2="kus";
+        s3="kedi";
+        console.log(s2||s3);// isim boşsa if condition kullanıp isim giriniz şeklinde alert oluşturabiliriz.
+        console.log(s2&&s3);
+
+
+    </script>
+</body>
+</html>
